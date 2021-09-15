@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 model = p.load(open('F_file', 'rb'))
 
+
 @app.route('/', methods=['POST'])
 def makecalc():
     data = request.get_json()
@@ -16,6 +17,7 @@ def makecalc():
     return jsonify(prediction)
 
 
+# PORT Host
 if __name__ == '__main__':
     app.run(port=5000, host='127.0.0.1')
     # port = int(os.environ.get("PORT", 5000))
